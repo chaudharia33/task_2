@@ -14,7 +14,7 @@ class PredictionRequest(BaseModel):
 @app.post("/predict")
 async def predict(request: PredictionRequest):
     # Load the saved pickle file
-    model = pickle.load(open("model.pkl", "rb"))
+    model = pickle.load(open("../model/model.pkl", "rb"))
 
     # Create a pandas dataframe from the user input
     data = pd.DataFrame({
