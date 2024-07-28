@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import pickle
 import pandas as pd
+import uvicorn
 
 app = FastAPI()
 
@@ -28,3 +29,6 @@ async def predict(request: PredictionRequest):
     prediction = model.predict(data)
 
     return {"prediction": prediction.tolist()}
+
+if __name__ == '__main__':
+    uvicorn.run(app, host='0.0.0.0', port=8000)
