@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: fastapi
-        image: my-fastapi-app:latest
+        image: myregistry.azurecr.io/my-fastapi-app:latest
         ports:
         - containerPort: 8000
